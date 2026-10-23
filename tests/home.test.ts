@@ -27,22 +27,34 @@ describe("home page", () => {
   });
 });
 
-describe("project context", () => {
-  it("names EUNIS, GÉANT and the Digitalverbund Bayern as context", () => {
-    for (const name of ["EUNIS", "GÉANT", "Digitalverbund Bayern"]) {
-      expect(html()).toContain(name);
+describe("why section", () => {
+  it("names the three value streams and the enabling capabilities", () => {
+    const text = html().replace(/<[^>]+>/g, "");
+    for (const phrase of [
+      "teaching",
+      "research",
+      "transfer",
+      "enabling capabilities",
+    ]) {
+      expect(text).toContain(phrase);
     }
   });
 
-  it("keeps the spaces between the linked names", () => {
-    const text = html().replace(/<[^>]+>/g, "");
-    expect(text).toContain(
-      "around EUNIS, GÉANT and the Digitalverbund Bayern.",
+  it("links Public Money, Public Code to its campaign site", () => {
+    expect(html()).toMatch(
+      /<a[^>]+href="https:\/\/publiccode\.eu\/"[^>]*>\s*Public Money, Public Code\s*<\/a>/,
     );
   });
 
-  // Partner logos need each organisation's written consent (see CLAUDE.md).
-  it("shows no partner logos", () => {
+  it("keeps the spaces around inline links in the built text", () => {
+    const text = html().replace(/<[^>]+>/g, "");
+    expect(text).toMatch(/principle of “Public Money, Public Code” are/);
+  });
+});
+
+// Partner logos need each organisation's written consent (see CLAUDE.md).
+describe("partner logos", () => {
+  it("are not shown", () => {
     const images = [...html().matchAll(/<img[^>]+src="([^"]+)"/g)].map(
       (m) => m[1],
     );
