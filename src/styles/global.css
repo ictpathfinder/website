@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+/*
+ * Brand tokens from the ICT Pathfinder style guide (Styleguide-ictpathinder.md in
+ * ictpathfinder/.github). Cyan on white is only ~3.24:1 - use it for graphical
+ * accents, never for small text.
+ */
+@theme {
+  --color-primary: #2e307c;
+  --color-primary-foreground: #ffffff;
+  --color-accent: #0099d2;
+  --color-surface: #ffffff;
+  --color-canvas: #f3f7fc;
+  --color-ink: #202644;
+  --color-muted: #586580;
+  --color-border: #dce3ef;
+  --radius: 0.5rem;
+  --font-sans:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-ink font-sans leading-relaxed;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply text-primary font-bold leading-tight;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

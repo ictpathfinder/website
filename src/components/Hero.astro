@@ -1,0 +1,53 @@
+---
+import Container from "./Container.astro";
+---
+
+<section class="bg-gradient-to-b from-white to-canvas">
+  <Container
+    size="sm"
+    class="flex flex-col items-center py-16 text-center sm:py-24"
+  >
+    <h1>
+      <!--
+        The style guide allows the three-line master logo only from 640 CSS px;
+        below that the symbol and a text name take its place.
+      -->
+      <img
+        src="/logo.svg"
+        alt="ICT Pathfinder – Architecture, services & automation for Higher Education Institutions and Alliances"
+        width="1942"
+        height="809"
+        class="hidden h-auto w-full max-w-3xl sm:block"
+      />
+      <span class="flex flex-col items-center gap-4 text-4xl sm:hidden">
+        <img
+          src="/icon.png"
+          alt=""
+          width="160"
+          height="160"
+          class="size-40 mix-blend-multiply"
+        />
+        ICT Pathfinder
+      </span>
+    </h1>
+
+    <div class="my-10 h-1 w-24 rounded-full bg-accent" aria-hidden="true"></div>
+
+    <p class="mb-6 text-2xl font-semibold text-primary italic sm:text-3xl">
+      Architecture, services &amp; automation for higher education.
+    </p>
+
+    <p class="mb-12 max-w-[65ch] text-lg text-muted sm:text-xl">
+      A modular management suite for higher education IT, connecting enterprise
+      architecture, IT service management, configuration data, and automation
+      through integrations with existing ticketing systems.
+    </p>
+
+    <a
+      href="https://github.com/ictpathfinder"
+      class="rounded-(--radius) bg-primary px-8 py-4 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+    >
+      Explore on GitHub
+    </a>
+  </Container>
+</section>

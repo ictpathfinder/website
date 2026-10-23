@@ -1,0 +1,17 @@
+---
+import Container from "./Container.astro";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-primary text-primary-foreground">
+  <Container class="flex flex-col gap-2 py-10 text-sm sm:flex-row sm:justify-between">
+    <p>© {year} ICT Pathfinder</p>
+    <a
+      href="https://github.com/ictpathfinder"
+      class="underline underline-offset-4"
+    >
+      github.com/ictpathfinder
+    </a>
+  </Container>
+</footer>

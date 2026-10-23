@@ -1,0 +1,21 @@
+---
+import type { HTMLTag } from "astro/types";
+
+interface Props {
+  size?: "sm" | "md" | "lg";
+  as?: HTMLTag;
+  class?: string;
+}
+
+const { size = "lg", as: Tag = "div", class: className = "" } = Astro.props;
+
+const widths = {
+  sm: "max-w-screen-lg",
+  md: "max-w-screen-xl",
+  lg: "max-w-screen-2xl",
+} as const;
+---
+
+<Tag class={`mx-auto px-4 sm:px-6 lg:px-8 ${widths[size]} ${className}`}>
+  <slot />
+</Tag>
