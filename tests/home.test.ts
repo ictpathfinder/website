@@ -26,3 +26,28 @@ describe("home page", () => {
     expect(html()).toContain('href="https://github.com/ictpathfinder"');
   });
 });
+
+describe("project context", () => {
+  it("names EUNIS, GÉANT and the Digitalverbund Bayern as context", () => {
+    for (const name of ["EUNIS", "GÉANT", "Digitalverbund Bayern"]) {
+      expect(html()).toContain(name);
+    }
+  });
+
+  it("keeps the spaces between the linked names", () => {
+    const text = html().replace(/<[^>]+>/g, "");
+    expect(text).toContain(
+      "around EUNIS, GÉANT and the Digitalverbund Bayern.",
+    );
+  });
+
+  // Partner logos need each organisation's written consent (see CLAUDE.md).
+  it("shows no partner logos", () => {
+    const images = [...html().matchAll(/<img[^>]+src="([^"]+)"/g)].map(
+      (m) => m[1],
+    );
+    expect(images.every((src) => /^\/(logo\.svg|icon\.png)$/.test(src))).toBe(
+      true,
+    );
+  });
+});

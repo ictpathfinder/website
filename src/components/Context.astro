@@ -1,0 +1,30 @@
+---
+import Container from "./Container.astro";
+
+// Context only, no logos: partner logos or "supported by" need each
+// organisation's written consent first (see CLAUDE.md).
+const link = "text-primary underline underline-offset-4";
+---
+
+<section class="border-t border-border bg-white">
+  <Container size="sm" class="py-16 text-center">
+    <h2 class="mb-6 text-2xl sm:text-3xl">Context</h2>
+    <p class="mx-auto max-w-[65ch] text-lg">
+      ICT Pathfinder takes up questions of enterprise architecture management,
+      IT service management and automation that are discussed in the higher
+      education IT communities around{" "}
+      <a href="https://www.eunis.org/" class={link}>
+        EUNIS
+      </a>
+      ,{" "}
+      <a href="https://geant.org/" class={link}>
+        GÉANT
+      </a>{" "}
+      and the{" "}
+      <a href="https://digitalverbund.bayern/" class={link}>
+        Digitalverbund Bayern
+      </a>
+      .
+    </p>
+  </Container>
+</section>
