@@ -1,0 +1,19 @@
+---
+import Container from "./Container.astro";
+---
+
+<header class="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur-md">
+  <Container class="flex items-center justify-between py-3">
+    <!-- No compact logo exists yet; the symbol alone stands in for it next to the name. -->
+    <a href="/" class="flex items-center gap-3 text-xl font-bold text-primary">
+      <img src="/icon.png" alt="" width="40" height="40" class="size-10" />
+      <span>ICT Pathfinder</span>
+    </a>
+    <a
+      href="https://github.com/ictpathfinder"
+      class="rounded-(--radius) border border-primary px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-canvas"
+    >
+      GitHub
+    </a>
+  </Container>
+</header>

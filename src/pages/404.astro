@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/Container.astro";
+---
+
+<BaseLayout
+  title="Not Found | ICT Pathfinder"
+  description="The page you were looking for does not exist."
+>
+  <Container size="sm" class="space-y-8 py-20">
+    <h1 class="text-4xl">404: Page not found</h1>
+    <p class="text-xl">Sorry, we could not find what you were looking for.</p>
+    <a
+      href="/"
+      class="inline-block rounded-(--radius) bg-primary px-6 py-3 font-medium text-primary-foreground hover:bg-primary/90"
+    >
+      Back to the start page
+    </a>
+  </Container>
+</BaseLayout>
