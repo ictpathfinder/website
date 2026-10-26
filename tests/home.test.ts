@@ -58,8 +58,23 @@ describe("partner logos", () => {
     const images = [...html().matchAll(/<img[^>]+src="([^"]+)"/g)].map(
       (m) => m[1],
     );
-    expect(images.every((src) => /^\/(logo\.svg|icon\.png)$/.test(src))).toBe(
-      true,
-    );
+    expect(
+      images.every((src) =>
+        /^\/(logo\.svg|icon\.png|github-mark-white\.svg)$/.test(src),
+      ),
+    ).toBe(true);
+  });
+});
+
+describe("header GitHub button", () => {
+  it("is dark and carries the GitHub mark, like on edutap.eu", () => {
+    const header = html().match(/<header[\s\S]*?<\/header>/)?.[0] ?? "";
+    const button =
+      header.match(
+        /<a[^>]+href="https:\/\/github\.com\/ictpathfinder"[^>]*>[\s\S]*?<\/a>/,
+      )?.[0] ?? "";
+    expect(button).toMatch(/class="[^"]*\bbg-black\b/);
+    expect(button).toMatch(/<img[^>]+src="\/github-mark-white\.svg"/);
+    expect(button).toContain("GitHub");
   });
 });
