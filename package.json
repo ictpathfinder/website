@@ -1,0 +1,44 @@
+{
+  "name": "ictpathfinder-website",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Public website of the ICT Pathfinder project",
+  "author": "ICT Pathfinder Project",
+  "contributors": [
+    {
+      "name": "Alexander Loechel",
+      "email": "Alexander.Loechel@lmu.de"
+    }
+  ],
+  "type": "module",
+  "packageManager": "pnpm@10.33.0",
+  "scripts": {
+    "build": "astro build",
+    "format": "prettier --write .",
+    "dev": "astro dev",
+    "preview": "astro preview",
+    "check": "astro check",
+    "pretest": "pnpm run build",
+    "test": "vitest run"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.4.2",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@types/node": "^24.19.2",
+    "prettier": "^3.9.10",
+    "prettier-plugin-astro": "^1.1.2",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.5"
+  }
+}
